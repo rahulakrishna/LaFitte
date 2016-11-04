@@ -27,7 +27,8 @@
     $result=$conn->query($sql);
     ?>
     <body>
-    <nav>
+    <div class="navbar-fixed">
+    <nav class="orange">
         <div class="nav-wrapper">
             <a href="#!" class="brand-logo">LaFitte</a>
             <!-- activate side-bav in mobile view -->
@@ -44,6 +45,7 @@
             </ul>
         </div>
     </nav>
+    </div>
 
     <div class="container">
         <div class="center"><h1>Current challenges!</h1></div>
@@ -51,7 +53,17 @@
             <?php
             if($result->num_rows>0){
                 while ($row=$result->fetch_assoc()){
-                    echo '<div class="col s4"><div class="card"><div class="card-content"><div class="card-title">'.$row["name"]."</div> Target: ".$row["target"]."</div></div></div>";
+                    echo '<div class="col s4">
+                                <div class="card">
+                                    <div class="card-content">
+                                        <div class="card-title">'.$row["name"]."</div> 
+                                        Target: ".$row["target"]."
+                                        <br/>
+                                        <button class='btn red col s6'>Delete</button>
+                                        <button class='btn green col s6'>Done</button>
+                                        </div>
+                                    </div>
+                                </div>";
                 }
             }
 

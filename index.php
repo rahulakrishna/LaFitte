@@ -9,6 +9,29 @@
     <script type="text/javascript" src="bower_components/materialize/dist/js/materialize.js"></script>
 
     <link rel="stylesheet" href="public/style.css">
+    <?php
+
+    function redirect($url, $permanent = false)
+    {
+        header('Location: ' . $url, true, $permanent ? 301 : 302);
+
+        exit();
+    }
+
+
+    if(isset($_POST['login']) && !empty($_POST['la_username']) && !empty($_POST['la_password'])){
+            if($_POST['la_username']=="joel" && $_POST['la_password']=="thepasswordofjoel"){
+                $msg="Success!";
+                redirect("dashboard.php");
+            }
+            else{
+                $msg="Invalid username or password";
+            }
+        }
+        else{
+            $msg="Enter the details please!";
+        }
+    ?>
 </head>
 <body id="login">
     <div class="container">
@@ -26,11 +49,12 @@
                     </div>
                     <div class="card-content">
                         <h4 class="center">Login</h4>
+                        <h6 class="center"><?php echo $msg;?></h6>
                         <div class="center-align">
-                            <form action="dashboard.php">
+                            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
                                 <input type="text" id="la_username" name="la_username" placeholder="username">
-                                <input type="password" id="la_password" name="la_username" placeholder="password">
-                                <input type="submit" class="btn orange">
+                                <input type="password" id="la_password" name="la_password" placeholder="password">
+                                <input type="submit" class="btn orange" name="login">
                             </form>
                         </div>
                     </div>
