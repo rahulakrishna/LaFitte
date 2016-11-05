@@ -34,7 +34,7 @@
     <div class="navbar-fixed">
     <nav class="orange">
         <div class="nav-wrapper">
-            <a href="#!" class="brand-logo">The DBMS project which will feature listing of Gyms and Challenges and Trainees</a>
+            <a href="#!" class="brand-logo">Fitness Podu!</a>
             <!-- activate side-bav in mobile view -->
             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
@@ -63,8 +63,8 @@
                                         <div class="card-title">'.$row["name"]."</div> 
                                         Target: ".$row["target"]."
                                         <br/>
-                                        <button class='btn red col s6' onclick=".delete($row["id"]).">Delete</button>
-                                        <button class='btn green col s6'>Done</button>
+                                        <a class='btn red col s6' href='delete_challenge.php?id=$row[id]'>Delete</a>
+                                        <a class='btn green col s6' href='edit_challenge,php?id=$row[id]'>Edit</a>
                                         </div>
                                     </div>
                                 </div>";
