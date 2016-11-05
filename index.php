@@ -36,7 +36,7 @@
 <body id="login">
     <div class="container">
         <div class="orange-text center">
-            <h1>Welcome to LaFitte!</h1>
+            <h3>Welcome to The DBMS project which will feature listing of Gyms and Challenges and Trainees</h3>
         </div>
     </div>
 

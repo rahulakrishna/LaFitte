@@ -23,18 +23,14 @@
     }
 
 
-    $sql="SELECT * FROM challenges";
+    $sql="SELECT * FROM trainees";
     $result=$conn->query($sql);
-
-    function delete($id){
-        $sql="DELETE FROM `challenges` WHERE `challenges`.`id` = $id";
-    }
     ?>
     <body>
     <div class="navbar-fixed">
     <nav class="orange">
         <div class="nav-wrapper">
-            <a href="#!" class="brand-logo">The DBMS project which will feature listing of Gyms and Challenges and Trainees</a>
+            <a href="#!" class="brand-logo">LaFitte</a>
             <!-- activate side-bav in mobile view -->
             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
@@ -46,25 +42,26 @@
             <ul class="side-nav" id="mobile-demo">
                 <li><a href="sass.html">Gyms</a></li>
                 <li><a href="components.html">Trainees</a></li>
+                <li class="user-welcome"><a href="user_detail_input.php">Welcome, Joel</a></li>
             </ul>
         </div>
     </nav>
     </div>
 
     <div class="container">
-        <div class="center"><h1>Current challenges!</h1></div>
+        <div class="center"><h1>Trainees Available</h1></div>
         <div class="row">
             <?php
             if($result->num_rows>0){
                 while ($row=$result->fetch_assoc()){
-                    echo '<div class="col s4">
-                                <div class="card">
-                                    <div class="card-content row    ">
+                    echo '<div class="col s6">
+                                <div class="card blue">
+                                    <div class="card-content">
                                         <div class="card-title">'.$row["name"]."</div> 
-                                        Target: ".$row["target"]."
+                                        Experience: ".$row["experience"]." years
                                         <br/>
-                                        <button class='btn red col s6' onclick=".delete($row["id"]).">Delete</button>
-                                        <button class='btn green col s6'>Done</button>
+                                        Height: ".$row["height"]."cm"
+                                        ."
                                         </div>
                                     </div>
                                 </div>";
@@ -72,14 +69,10 @@
             }
 
             ?>
+
         </div>
 
-        <div class="center">Add a Challenge</div>
-        <form class="center" action="add_challenge.php" method="get">
-            <input type="text" placeholder="Name" name="ch_name"><br>
-            <input type="date" placeholder="Target" name="ch_target">
-            <input type="submit" class="btn orange">
-        </form>
+
     </div>
 
     </body>
