@@ -10,37 +10,25 @@
     <title>LaFitte</title>
 </head>
 <?php
-/**
- * Created by PhpStorm.
- * User: rahul
- * Date: 11/5/16
- * Time: 10:04 PM
- */
 
-    error_reporting(E_ALL);
-    function redirect($url, $permanent = false){
-        header('Location: ' . $url, true, $permanent ? 301 : 302);
-        exit();
-    }
-    $servername="localhost";
-    $username="lafitte";
-    $password="joelhrishirahul";
+error_reporting(E_ALL);
 
-    $dbname="lafitte";
+$servername="localhost";
+$username="lafitte";
+$password="joelhrishirahul";
 
-    $conn=mysqli_connect($servername,$username,$password,$dbname);
+$dbname="lafitte";
 
-    if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
-    }
+$conn=mysqli_connect($servername,$username,$password,$dbname);
 
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
 
-    $id=$_GET['id'];
+$user="joelninan";
 
-    $sql="SELECT * FROM `challenges` WHERE `challenges`.`id` = '$id'";
-    $result=$conn->query($sql);
-
-
+$sql="SELECT * FROM users WHERE `users`.`id` = '$user'";
+$result=$conn->query($sql);
 ?>
 <body>
 <div class="navbar-fixed">
@@ -60,33 +48,33 @@
                 <li><a href="gyms.php">Gyms</a></li>
                 <li><a href="trainees.php">Trainees</a></li>
                 <li><a href="dashboard.php">Dashboard</a> </li>
+                <li class="user-welcome"><a href="user_detail_input.php">Welcome, Joel</a></li>
             </ul>
         </div>
     </nav>
 </div>
 
 <div class="container">
-    <div class="row">
-        <div class="col m4 push-m4 blue-grey card">
-            <div class="card-content row">
-            <form action="edit_challenge_input.php">
-            <?php
-            if($result->num_rows>0) {
-                while ($row = $result->fetch_assoc()) {
-            ?>
-                    <input type="text" value="<?php echo $id; ?>" name="id" id="id" class="hiddendiv">
-                    <input type="text" placeholder="Challenge" name="ch_name" id="ch_name" value="<?php echo $row['name'];?>">
-                    <input type="date" placeholder="Target" name="ch_target" id="ch_target" value="<?php echo $row['target'];?>">
-                    <input type="submit" class="btn col s12" name="submit" id="submit">
-
-            <?php
-                }
-            }
-            ?>
-            </form>
+    <div class="center">
+        <?php
+            if($result->num_rows>0){
+             while ($row=$result->fetch_assoc()){
+                 ?>
+            <div class="col s8 push-s4">
+                <h3 class="green">User Details</h3>
             </div>
-        </div>
+        <?php
+                 echo '<h4>'.$row["name"].'</h4><br>';
+                 echo '<h5>'.$row["height"].' cm</h5><br>';
+                 echo '<h5>'.$row["weight"].' kg</h5><br>';
+                 echo '<h4>Address Details</h4>';
+
+                 echo '<h5>'.$row["city"].', '.$row["state"].', '.$row["country"].'</h5>';
+             }
+            }
+        ?>
     </div>
 </div>
+
 </body>
 </html>

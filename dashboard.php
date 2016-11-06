@@ -38,14 +38,16 @@
             <!-- activate side-bav in mobile view -->
             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
-                <li><a href="sass.html">Gyms</a></li>
-                <li><a href="components.html">Trainees</a></li>
-                <li class="user-welcome"><a href="user_detail_input.php">Welcome, Joel</a></li>
+                <li><a href="gyms.php">Gyms</a></li>
+                <li><a href="trainees.php">Trainees</a></li>
+                <li><a href="dashboard.php">Dashboard</a> </li>
+                <li class="user-welcome"><a href="user_info.php">Welcome, Joel</a></li>
             </ul>
             <!-- navbar for mobile -->
             <ul class="side-nav" id="mobile-demo">
-                <li><a href="sass.html">Gyms</a></li>
-                <li><a href="components.html">Trainees</a></li>
+                <li><a href="gyms.php">Gyms</a></li>
+                <li><a href="trainees.php">Trainees</a></li>
+                <li><a href="dashboard.php">Dashboard</a> </li>
             </ul>
         </div>
     </nav>
@@ -64,7 +66,7 @@
                                         Target: ".$row["target"]."
                                         <br/>
                                         <a class='btn red col s6' href='delete_challenge.php?id=$row[id]'>Delete</a>
-                                        <a class='btn green col s6' href='edit_challenge,php?id=$row[id]'>Edit</a>
+                                        <a class='btn blue col s6' href='edit_challenge.php?id=$row[id]'>Edit</a>
                                         </div>
                                     </div>
                                 </div>";

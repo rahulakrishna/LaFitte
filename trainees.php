@@ -30,31 +30,41 @@
     <div class="navbar-fixed">
     <nav class="orange">
         <div class="nav-wrapper">
-            <a href="#!" class="brand-logo">LaFitte</a>
+            <a href="#!" class="brand-logo">Put Fitness!</a>
             <!-- activate side-bav in mobile view -->
             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
-                <li><a href="sass.html">Gyms</a></li>
-                <li><a href="components.html">Trainees</a></li>
-                <li class="user-welcome"><a href="user_detail_input.php">Welcome, Joel</a></li>
+                <li><a href="gyms.php">Gyms</a></li>
+                <li><a href="trainees.php">Trainees</a></li>
+                <li><a href="dashboard.php">Dashboard</a> </li>
+                <li class="user-welcome"><a href="user_info.php">Welcome, Joel</a></li>
             </ul>
             <!-- navbar for mobile -->
             <ul class="side-nav" id="mobile-demo">
-                <li><a href="sass.html">Gyms</a></li>
-                <li><a href="components.html">Trainees</a></li>
-                <li class="user-welcome"><a href="user_detail_input.php">Welcome, Joel</a></li>
+                <li><a href="gyms.php">Gyms</a></li>
+                <li><a href="trainees.php">Trainees</a></li>
+                <li><a href="dashboard.php">Dashboard</a> </li>
+                <li class="user-welcome"><a href="user_info.php">Welcome, Joel</a></li>
             </ul>
         </div>
     </nav>
     </div>
 
     <div class="container">
+        <div class="center row">
+            <div class="col s4 push-s4">
+                <select>
+                    <option>Hello</option>
+                    <option>Hey</option>
+                </select>
+            </div>
+        </div>
         <div class="center"><h1>Trainees Available</h1></div>
         <div class="row">
             <?php
             if($result->num_rows>0){
                 while ($row=$result->fetch_assoc()){
-                    echo '<div class="col s6">
+                    echo '<div class="col s8 push-s2">
                                 <div class="card blue">
                                     <div class="card-content">
                                         <div class="card-title">'.$row["name"]."</div> 

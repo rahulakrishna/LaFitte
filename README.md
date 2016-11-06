@@ -1,2 +1,2 @@
 # LaFitte
-A very stupid DBMS Project!
+A very stupid php DBMS Project!

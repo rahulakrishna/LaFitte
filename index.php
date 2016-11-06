@@ -20,9 +20,9 @@
 
 
     if(isset($_POST['login']) && !empty($_POST['la_username']) && !empty($_POST['la_password'])){
-            if($_POST['la_username']=="joel" && $_POST['la_password']=="thepasswordofjoel"){
+            if($_POST['la_username']=="joelninan" && $_POST['la_password']=="thepasswordofjoel"){
                 $msg="Success!";
-                redirect("dashboard.php");
+                redirect("dashboard.php?=joelninan");
             }
             else{
                 $msg="Invalid username or password";
@@ -36,7 +36,10 @@
 <body id="login">
     <div class="container">
         <div class="orange-text center">
-            <h3>Welcome to The DBMS project which will feature listing of Gyms and Challenges and Trainees</h3>
+            <h3>Welcome to Put Fitness!</h3>
+            <h5>You go to a hotel, you need more chutney, you say <b>Put Chutney</b>
+            <br>You go to a Gym, you need more fitness, you say <span class="red-text   "><b>Put Fitness!</b></span>
+            </h5>
         </div>
     </div>
 

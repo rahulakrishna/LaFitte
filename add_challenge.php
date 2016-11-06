@@ -34,13 +34,13 @@
     $sql="INSERT INTO `challenges` (`name`, `target`) VALUES ('$name', '$target')";
     $result=$conn->query($sql);
     redirect("dashboard.php");
-
+    ?>
 
 </head>
 <body id="login">
     <div class="container">
         <div class="orange-text center">
-            <h3>Welcome to The DBMS project which will feature listing of Gyms and Challenges and Trainees</h3>
+            <h3>Welcome to Put Fitness!</h3>
         </div>
     </div>
 
