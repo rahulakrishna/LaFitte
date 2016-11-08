@@ -8,6 +8,8 @@
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="bower_components/materialize/dist/js/materialize.js"></script>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link rel="stylesheet" href="public/style.css">
     <?php
 

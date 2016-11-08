@@ -7,6 +7,7 @@
 
         <link rel="stylesheet" href="bower_components/materialize/dist/css/materialize.min.css">
         <link rel="stylesheet" href="public/dash.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>LaFitte</title>
     </head>
     <?php
@@ -26,9 +27,7 @@
     $sql="SELECT * FROM challenges";
     $result=$conn->query($sql);
 
-    function delete($id){
-        $sql="DELETE FROM `challenges` WHERE `challenges`.`id` = $id";
-    }
+    
     ?>
     <body>
     <div class="navbar-fixed">
@@ -59,7 +58,7 @@
             <?php
             if($result->num_rows>0){
                 while ($row=$result->fetch_assoc()){
-                    echo '<div class="col s4">
+                    echo '<div class="col m4 s12">
                                 <div class="card">
                                     <div class="card-content row    ">
                                         <div class="card-title">'.$row["name"]."</div> 

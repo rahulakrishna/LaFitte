@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="bower_components/materialize/dist/css/materialize.min.css">
     <link rel="stylesheet" href="public/dash.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>LaFitte</title>
 </head>
 <?php
@@ -61,7 +62,7 @@ $result=$conn->query($sql);
              while ($row=$result->fetch_assoc()){
                  ?>
             <div class="col s8 push-s4">
-                <h3 class="green">User Details</h3>
+                <h3 class="green">Body Details</h3>
             </div>
         <?php
                  echo '<h4>'.$row["name"].'</h4><br>';

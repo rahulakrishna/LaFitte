@@ -5,6 +5,7 @@
     <!--<script src="bower_components/semantic/dist/semantic.min.js"></script>-->
     <script src="bower_components/materialize/dist/js/materialize.js"></script>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="bower_components/materialize/dist/css/materialize.min.css">
     <link rel="stylesheet" href="public/dash.css">
     <title>LaFitte</title>
