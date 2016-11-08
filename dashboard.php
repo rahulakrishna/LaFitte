@@ -2,7 +2,6 @@
 <html>
     <head>
         <script src="bower_components/jquery/dist/jquery.min.js"></script>
-        <!--<script src="bower_components/semantic/dist/semantic.min.js"></script>-->
         <script src="bower_components/materialize/dist/js/materialize.js"></script>
 
         <link rel="stylesheet" href="bower_components/materialize/dist/css/materialize.min.css">
@@ -47,6 +46,7 @@
                 <li><a href="gyms.php">Gyms</a></li>
                 <li><a href="trainees.php">Trainees</a></li>
                 <li><a href="dashboard.php">Dashboard</a> </li>
+                <li class="user-welcome"><a href="user_info.php">Welcome, Joel</a></li>
             </ul>
         </div>
     </nav>
@@ -82,6 +82,14 @@
             <input type="submit" class="btn orange">
         </form>
     </div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.slider').slider();
+            $('.button-collapse').sideNav();
+
+        });
+    </script>
 
     </body>
 </html>

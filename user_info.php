@@ -77,5 +77,12 @@ $result=$conn->query($sql);
     </div>
 </div>
 
+<script type="text/javascript">
+        $(document).ready(function () {
+            $('.slider').slider();
+            $('.button-collapse').sideNav();
+
+        });
+    </script>
 </body>
 </html>
