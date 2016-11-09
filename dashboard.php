@@ -32,7 +32,7 @@
     <div class="navbar-fixed">
     <nav class="orange">
         <div class="nav-wrapper">
-            <a href="#!" class="brand-logo">Fitness Podu!</a>
+            <a href="#!" class="brand-logo">Put Fitness!</a>
             <!-- activate side-bav in mobile view -->
             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
